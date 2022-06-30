@@ -7,7 +7,7 @@
     $fornecedor = $_POST['fornecedor'];
     $validadeepi = $_POST['validadeepi'];
     $quantidade = $_POST['quantidade'];
- 
+  
     $sql = "UPDATE epi SET descricao='$descricao',numeroca='$numeroca',validadeca='$validadeca',fornecedor='$fornecedor',validadeepi='$validadeepi',quantidade='$quantidade' WHERE id=$id";
     if(mysqli_query($conn,$sql)){
         echo "<script language='javascript' type='text/javascript'> 

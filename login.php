@@ -1,4 +1,5 @@
 <?php
+    //session_start();
     include 'conecta.php';
     $login = $_POST['login'];
     $senha = $_POST['senha'];

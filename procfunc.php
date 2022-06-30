@@ -6,23 +6,30 @@
     <meta http-equiv="content-language" content="pt-br" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SisEPI</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <style>
         body {
             background-color: #DCDCDC;
         }
 
-        #sair {
-            padding-left: 60em;
-            padding-top: .5em;
+        IMG.displayed {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
         }
+
+        #sair {
+            margin-left: 46em;
+            padding-top: .5em;
+
+        }
+    
     </style>
 </head>
 
 <body>
-    <img src="" width="20%" height="20%" />
-    <hr />
+    <img class="displayed" src="./imagens/logo4.PNG" width="15%" height="15%" />
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -76,7 +83,7 @@
                             </ul>
                         </li>
                         <li class="nav-item" id="sair">
-                            <a href="sair.php" style="text-decoration:none">Sair&nbsp;<img src="imagem/logout2.png" width="23" height="23"></a>
+                            <a href="sair.php" style="text-decoration:none">Sair&nbsp;<img src="imagens/logout.png" width="23" height="23"></a>
                         </li>
                     </ul>
                 </div>
@@ -115,7 +122,7 @@
                                     $matricula = $_POST['matricula'];
                                     $nome = $_POST['nome'];
                                     $pesquisa = mysqli_query($conn, "SELECT * FROM funcionarios WHERE matricula='$matricula' OR nome='$nome'");
-                                    
+
                                     $row = mysqli_num_rows($pesquisa);
                                     if ($row > 0) {
                                         while ($registro = $pesquisa->fetch_array()) {
@@ -205,9 +212,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                                </div>
                                             </div>
                         </div>
                     </div>
@@ -223,7 +227,7 @@
             </tbody>
             </table>
 
-            <a href="dash.php"><button type="button" class="btn btn-outline-secondary">Voltar</button></a>
+            <a href="entrega.php"><button type="button" class="btn btn-outline-secondary">Voltar</button></a>
                 </div>
 
             </div>
