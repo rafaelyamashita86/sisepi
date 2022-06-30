@@ -92,68 +92,51 @@
         </center>
         <br>
         <section>
-            <div class="row justify-content-center row-cols-1 row-cols-md-2 mb-2">
+            <div class="row justify-content-center row-cols-1 row-cols-md-1 mb-2">
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm">
                         <div class="card-header py-3">
-                            <h4 class="my-0 fw-normal text-center"><b>Cadastrar Funcionario</b></h4>
+                            <h4 class="my-0 fw-normal text-center"><b>EPI's Entregues</b></h4>
                         </div>
                         <div class="card-body">
-                            <form action="cadfuncionario.php" method="POST">
-                                <div class="mb-3">
-                                    <label class="form-label">Nome</label>
-                                    <input type="text" class="form-control" name="nome" placeholder="Digite o nome" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">CPF</label>
-                                    <input type="text" class="form-control" name="cpf" placeholder="Digite o número do CPF">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">Telefone</label>
-                                    <input type="text" class="form-control" name="telefone" placeholder="Digite o número do telefone com DDD.">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Data de Nascimento</label>
-                                    <input type="date" class="form-control" name="data_nascimento">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Sexo</label>
-                                    <select class="form-select" name="sexo">
-                                        <option selected>Escolha o sexo</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Feminino">Feminino</option>
-                                        <option value="Outro">Outro</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Endereço</label>
-                                    <input type="text" class="form-control" name="endereco" placeholder="Digite o endereço">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="setor">Selecione o Setor</label>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Descrição</th>
+                                        <th scope="col">Quantidade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     <?php
                                     include 'conecta.php';
-                                    $query = mysqli_query($conn, "SELECT * FROM setor ORDER BY nome");
-                                    echo '<select name="setor" class="form-select">';
-                                    while ($dados = $query->fetch_array()) {
-                                        echo "<option value='" . $dados['id'] . "'>" . $dados['nome'] . "</option>";
+                                    $epi = $_POST['epi'];
+                                    $pesquisa = mysqli_query($conn, "SELECT * FROM epi,entrega,funcionarios WHERE entrega.id_epi=$epi AND funcionarios.matricula=entrega.matricula_func ORDER BY data desc");
+                                    $row = mysqli_num_rows($pesquisa);
+                                    if ($row > 0) {
+                                        while ($registro = $pesquisa->fetch_array()) {
+                                            echo '<tr>';
+                                            echo '<td>' . $registro['id'] . '</td>';
+                                            echo '<td>' . $registro['nome'] . '</td>';
+                                            echo '<td>' . $registro['data'] . '</td>';
+                                            echo '<td>' . $registro['descricao'] . '</td>';
+                                            echo '<td>' . $registro['quantidade'] . '</td>';
+                                            echo '</tr>';
+                                        }
+                                        echo '</tbody>';
+                                        echo '</table>';
+                                    } else {
+                                        echo "Não há registros para listar!";
+                                        echo '</tbody>';
+                                        echo '</table>';
                                     }
-                                    echo "</select>";
-                                    mysqli_close($conn);
                                     ?>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Função</label>
-                                    <input type="text" class="form-control" name="funcao" placeholder="Digite a função">
-                                </div>
-                                <button type="submit" class="btn btn-outline-success">Cadastrar</button>
-                                <a href="dash.php"><button type="button" class="btn btn-outline-secondary">Voltar</button></a>
-                            </form>
+                            </table>
+                            <a href="dash.php"><button type="button" class="btn btn-outline-secondary">Voltar</button></a>
                         </div>
                     </div>
-                </div>
 
         </section>
         <footer>

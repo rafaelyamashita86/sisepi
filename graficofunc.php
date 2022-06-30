@@ -92,11 +92,12 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Relatorio
+                                Relatorios
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="visuentrega.php">Entrega</a></li>
-                                <li><a class="dropdown-item" href="visuepi.php">Listar2</a></li>
+                                <li><a class="dropdown-item" href="visuentrega.php">Entregas</a></li>
+                                <li><a class="dropdown-item" href="relepi.php">Por EPI</a></li>
+                                <li><a class="dropdown-item" href="relatorio.php">Por Periodo</a></li>
                             </ul>
                         </li>
                     </ul>
