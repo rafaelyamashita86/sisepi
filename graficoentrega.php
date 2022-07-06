@@ -42,16 +42,22 @@
         body {
             background-color: #DCDCDC;
         }
+
+        IMG.displayed {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
     </style>
 </head>
 
 <body>
-    <img src="" width="20%" height="20%" />
+    <img class="displayed" src="./imagens/logo4.PNG" width="15%" height="15%" />
     <hr />
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="dash.php">sisEPI</a>
+                <a class="navbar-brand" href="dash.php"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -94,15 +100,14 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Relatorio
                             </a>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Relatorio
-                            </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="visuentrega.php">Entrega</a></li>
-                                <li><a class="dropdown-item" href="visuepi.php">Listar2</a></li>
+                                <li><a class="dropdown-item" href="relepi.php">Por EPI</a></li>
+                                <li><a class="dropdown-item" href="relatorio.php">Relatorio por Período</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sair.php">Sair</a>
                         </li>
                     </ul>
                 </div>
@@ -111,11 +116,6 @@
     </header>
     <div class="container-fluid">
         <br>
-        <center>
-            <h1>
-                <p class="text-black">SisEPI - Entrega de EPI eletronico</p>
-            </h1>
-        </center>
         <br>
         <section>
             <div class="row justify-content-center text-center">

@@ -20,12 +20,6 @@
             margin-right: auto
         }
 
-        #sair {
-            margin-left: 46em;
-            padding-top: .5em;
-
-        }
-    
     </style>
 </head>
 
@@ -34,7 +28,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="dash.php">sisEPI</a>
+                <a class="navbar-brand" href="dash.php"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -83,8 +77,8 @@
                                 <li><a class="dropdown-item" href="relatorio.php">Relatorio por Período</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item" id="sair">
-                            <a href="sair.php" style="text-decoration:none">Sair&nbsp;<img src="imagens/logout.png" width="23" height="23"></a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sair.php">Sair</a>
                         </li>
                     </ul>
                 </div>

@@ -13,6 +13,13 @@
         body {
             background-color: #DCDCDC;
         }
+
+        IMG.displayed {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+
     </style>
 </head>
 

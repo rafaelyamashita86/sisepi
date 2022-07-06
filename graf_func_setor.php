@@ -30,6 +30,6 @@
     </script>
   </head>
   <body>
-    <div id="piechart_3d_setor" style="width: 400px; height: 400px;"></div>
+    <div id="piechart_3d_setor" style="width: 300px; height: 300px;"></div>
   </body>
 </html>
